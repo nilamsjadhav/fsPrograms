@@ -10,7 +10,7 @@ const giveLength = record => record.split('|').length;
 
 const separator = record => '|--'.repeat(giveLength(record)) + '|\n';
 
-const row = record => '|' + record + '|\n';
+const row = record =>  record + '\n';
 
 const table = records => records.slice(1).map(row);
 
