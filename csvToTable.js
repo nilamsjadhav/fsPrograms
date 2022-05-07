@@ -21,4 +21,9 @@ const structureDetails = function (file) {
   writeData(list.join(''));
 };
 
-console.log(structureDetails(process.argv.slice(2)));
+const main = function(){
+  const file = process.argv.slice(2).join();
+  console.log(structureDetails(file));
+};
+
+main();
