@@ -1,3 +1,4 @@
+node csvToTable.js $1
 git add .
-git commit $1
+git commit
 git push
