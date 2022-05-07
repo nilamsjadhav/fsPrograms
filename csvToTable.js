@@ -8,22 +8,22 @@ const tableHeader = record => [row(record), separator(record)];
 
 const giveLength = record => record.split('|').length;
 
-const separator = (record) => '|--'.repeat(giveLength(record)) + '|\n';
+const separator = record => '|--'.repeat(giveLength(record)) + '|\n';
 
 const row = record => '|' + record + '|\n';
 
-const table = (records) => records.slice(1).map(row);
+const table = records => records.slice(1).map(row);
 
 const structureDetails = function (file) {
   const records = readData(file).split('\n');
-  const list = table(records)
+  const list = table(records);
   list.unshift(...tableHeader(records[0]));
   writeData(list.join(''));
 };
 
 const main = function(){
   const file = process.argv.slice(2).join();
-  console.log(structureDetails(file));
+  structureDetails(file);
 };
 
 main();

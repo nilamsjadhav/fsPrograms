@@ -1,6 +1,10 @@
-const fs  = require('fs');
+const fs = require('fs');
 
 const readData = file => fs.readFileSync(file, 'utf8');
+
+const writeData = content => {
+  fs.writeFileSync('./pokemon.json', JSON.stringify(content), 'utf8');
+};
 
 const splitRecord = record => record.split('|');
 
@@ -13,16 +17,16 @@ const determineValue = function (value) {
 const assignValue = function (fields) {
   return function (element, value, index) {
     const key = fields[index];
-    let newValue = determineValue(value);
+    const newValue = determineValue(value);
     element[key] = +newValue || newValue;
     return element;
-  }
+  };
 };
 
 const createObject = function (fields) {
   return (record) => {
     return record.reduce(assignValue(fields), {});
-  }
+  };
 };
 
 const convertToObject = function (records, fields) {
@@ -34,4 +38,9 @@ const structureDetails = function (file) {
   return convertToObject(records.slice(1), keys(records[0]));
 };
 
-console.log(structureDetails('./pokemonDetails.csv'));
+const main = function () {
+  const contents = structureDetails('./pokemonDetails.csv');
+  writeData(contents);
+};
+
+main();
