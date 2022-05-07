@@ -21,4 +21,4 @@ const structureDetails = function (file) {
   writeData(list.join(''));
 };
 
-console.log(structureDetails('./students.csv'));
+console.log(structureDetails('./movie.csv'));
