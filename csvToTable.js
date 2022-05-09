@@ -19,7 +19,6 @@ const insertHeader = records => {
 const structureDetails = function (file) {
   const records = readData(file).split('\n');
   const table = insertHeader(records);
-  console.log(table);
   writeData(formRow(table).join('\n'));
 };
 
