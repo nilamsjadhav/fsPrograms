@@ -4,21 +4,23 @@ const readData = file => fs.readFileSync(file, 'utf8');
 
 const writeData = content => fs.writeFileSync('./index.md', content, 'utf8');
 
-const tableHeader = record => [row(record), separator(record)];
+const separator = record => record.map(()=>'--');
 
-const giveLength = record => record.split('|').length;
+const splitEachElement = records => records.map(x => x.split('|'));
 
-const separator = record => '|--'.repeat(giveLength(record)) + '|\n';
+const formRow = records => records.map(record => record.join('|'));
 
-const row = record =>  record + '\n';
-
-const table = records => records.slice(1).map(row);
+const insertHeader = records => {
+  const splittedRecords = splitEachElement(records);
+  splittedRecords.splice(1, 0, separator(splittedRecords[0]));
+  return splittedRecords;
+};
 
 const structureDetails = function (file) {
   const records = readData(file).split('\n');
-  const list = table(records);
-  list.unshift(...tableHeader(records[0]));
-  writeData(list.join(''));
+  const table = insertHeader(records);
+  console.log(table);
+  writeData(formRow(table).join('\n'));
 };
 
 const main = function(){
