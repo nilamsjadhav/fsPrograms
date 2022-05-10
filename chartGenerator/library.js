@@ -26,7 +26,7 @@ const getDenominator = function(value){
 };
 
 const computePercentage = function (value, denominator) {
-  return (value / denominator * 100) * 5;
+  return (value / denominator * 100) * 10;
 };
 
 const calculatePercentage = function (values, value) {

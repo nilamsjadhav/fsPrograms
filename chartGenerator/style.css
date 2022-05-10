@@ -14,7 +14,7 @@ body{
 .chart {
   display: flex;
   align-items: flex-end;
-  width: 80%;
+  width: 90%;
   border-bottom: 1px solid black;
   justify-content: center;
 }
