@@ -22,17 +22,17 @@ const labels = function (number, tag, content) {
   return generateTag('div', labels, generateAttribute('class', 'names'));
 };
 
-const formLink = function (styleSheet) {
-  let href = generateAttribute('href', styleSheet);
+const formLink = function (chartStyle) {
+  let href = generateAttribute('href', chartStyle);
   const rel = generateAttribute('rel', 'stylesheet');
   return generateTag('link', '', rel + ' ' + href);
 };
 
-const headTag = function (styleSheet, generatedStyle) {
+const headTag = function (chartStyle, barStyle) {
   const title = generateTag('title', 'Chart');
-  const styleSheetLink = formLink(styleSheet);
-  const generatedStyleLink = formLink(generatedStyle);
-  return generateTag('head', title + styleSheetLink + generatedStyleLink);
+  const chartStyleLink = formLink(chartStyle);
+  const barStyleLink = formLink(barStyle);
+  return generateTag('head', title + chartStyleLink + barStyleLink);
 };
 
 const bodyTag = function (statistics){
@@ -43,14 +43,14 @@ const bodyTag = function (statistics){
   return generateTag('body', outerDiv);
 };
 
-const formChart = function (styleSheet, generatedStyle, statistics) {
-  const head = headTag(styleSheet, generatedStyle);
+const formChart = function (chartStyle, barStyle, statistics) {
+  const head = headTag(chartStyle, barStyle);
   const body = bodyTag(statistics);
   return generateTag('html', head + body);
 };
 
-const generateChart = function (file, styleSheet, generatedStyle, statistics) {
-  const chart = formChart(styleSheet, generatedStyle, statistics);
+const generateChart = function (file, chartStyle, barStyle, statistics) {
+  const chart = formChart(chartStyle, barStyle, statistics);
   fs.writeFileSync(file, chart, 'utf8');
 };
 
