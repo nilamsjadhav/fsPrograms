@@ -1,6 +1,6 @@
 const fs = require('fs');
-const statistics = require('./statistics.json');
-const { length, values, createProperty, convertToPercentage} = require('./library.js');
+const lib = require('./library.js');
+const { length, values, createProperty, convertToPercentage } = lib;
 
 const encloseStyle = (className, property)=>className + ' { ' + property + '}';
 
@@ -20,7 +20,7 @@ const generateStyle = function (numbers, values) {
 const generateStyleSheet = function (statistics, styleSheet) {
   const valueInPercentage = convertToPercentage(values(statistics));
   const style = generateStyle(length(statistics), valueInPercentage);
-  fs.appendFileSync(styleSheet, style, 'utf8');
+  fs.writeFileSync(styleSheet, style, 'utf8');
 }
 
-generateStyleSheet(statistics, 'barStyle.css');
+exports.generateStyleSheet = generateStyleSheet;

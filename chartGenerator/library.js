@@ -1,4 +1,4 @@
-const values = (statistics) => Object.values(statistics);
+const values = statistics => Object.values(statistics);
 
 const length = statistics => Object.keys(statistics).length;
 
@@ -26,7 +26,7 @@ const getDenominator = function(value){
 };
 
 const computePercentage = function (value, denominator) {
-  return (value / denominator * 100) * 3;
+  return (value / denominator * 100) * 5;
 };
 
 const calculatePercentage = function (values, value) {

@@ -1,7 +1,8 @@
 {
-  "cricket": 250,
-  "badminton": 190,
-  "hockey": 150,
-  "volleyBall": 60,
-  "basketBall": 65
+  "cricket": 1250,
+  "badminton": 1590,
+  "hockey": 1880,
+  "volleyBall":  2060,
+  "basketBall": 1265,
+  "kabbadi": 1000
 }

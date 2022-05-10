@@ -1,0 +1,2 @@
+node createChart.js statistics.json
+open index.html
