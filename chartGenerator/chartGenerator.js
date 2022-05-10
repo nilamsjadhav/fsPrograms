@@ -49,9 +49,9 @@ const formChart = function (chartStyle, barStyle, statistics) {
   return generateTag('html', head + body);
 };
 
-const generateChart = function (file, chartStyle, barStyle, statistics) {
+const generateChart = function (htmlFile, chartStyle, barStyle, statistics) {
   const chart = formChart(chartStyle, barStyle, statistics);
-  fs.writeFileSync(file, chart, 'utf8');
+  fs.writeFileSync(htmlFile, chart, 'utf8');
 };
 
 exports.generateChart = generateChart;
