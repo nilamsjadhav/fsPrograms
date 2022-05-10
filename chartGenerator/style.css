@@ -1,0 +1,28 @@
+.outer {
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  width: 50%;
+  border-bottom: 1px solid black;
+}
+.chart {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: center;
+}
+.names {
+  display: flex;
+  width: 100%;
+  margin : 1.5em;
+  justify-content: center;
+}
+.chart > div{
+  width: 40px;
+  border: 1px solid black; 
+  background-color: aquamarine;
+}
+.names > div{
+  transform: rotate(-35deg);
+}

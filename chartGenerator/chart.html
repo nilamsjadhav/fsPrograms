@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      .outer {
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+        width: 50%;
+        border-bottom: 1px solid black;
+      }
+       .chart {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: center;
+      }
+      .names {
+        display: flex;
+        width: 100%;
+        margin : 1.5em;
+        justify-content: center;
+      }
+      .chart > div{
+        width: 40px;
+        border: 1px solid black; 
+        background-color: aquamarine;
+      }
+      .names > div{
+        transform: rotate(-35deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="chart">
+        <div style ="height : 140px"></div>
+        <div style="height: 180px;"></div>
+        <div style="height: 150px;"></div>
+      </div>
+    <div class="names">
+      <div>delhi</div>
+      <div>maharashtra</div>
+      <div>pune</div>
+    </div>
+    </div>
+  </body>
+</html>
