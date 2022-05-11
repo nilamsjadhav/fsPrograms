@@ -13,7 +13,7 @@ function displayResult(){
 
 function start(){
   local count=0;
-  local winnedPrize=0;
+  local reward=0;
   local result=0;
   while [[ $count < 2 ]]
   do
@@ -21,10 +21,10 @@ function start(){
     read -p "Answer :" answer;
     result=`node quiz.js 'a' $answer`;
     displayResult $result;
-    winnedPrize=$(( $winnedPrize + $result ));
+    reward=$(( $reward + $result ));
     count=$(( $count + 1 ));
   done
-  echo "Congratulations..!! You earned $winnedPrize";
+  echo "Congratulations..!! You earned $reward";
 }
 
 start
