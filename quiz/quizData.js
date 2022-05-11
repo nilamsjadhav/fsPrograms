@@ -1,7 +1,7 @@
 const questions = [
   {
     question: 'Which one is the smallest ocean in world ?',
-    options: { a: 'Indian', b: 'pacific', c: 'Atlantic', d: 'Arctic' },
+    options: { a: 'Indian', b: 'Pacific', c: 'Atlantic', d: 'Arctic' },
     answer: 'Arctic',
     reward : 1000
   },
@@ -19,7 +19,7 @@ const questions = [
   },
   {
     question: 'Total number of oceans in the world is',
-    options: { a:3, b:7, c:5, d:12},
+    options: { a:3, b:7, c:12, d:5},
     answer: 5,
     reward : 4000
   },
@@ -31,8 +31,8 @@ const questions = [
   },
   {
     question: 'Joule is the unit of',
-    options: { a:'temperature', b:'pressure', c:'energy', d:'heat'},
-    answer: 'energy',
+    options: { a:'Temperature', b:'Pressure', c:'Energy', d:'Heat'},
+    answer: 'Energy',
     reward : 4500
   },
   {
@@ -43,13 +43,13 @@ const questions = [
   },
   {
     question: 'Maximum number of seats in the Rajya Sabha is in',
-    options: { a:'Bihar', b:'Uttar Pradesh', c:'Andhra Pradesh', d:'West Bengal'},
+    options: { a:'Uttar Pradesh', b:'Bihar', c:'Andhra Pradesh', d:'West Bengal'},
     answer: 'Uttar Pradesh',
     reward : 5500
   },
   {
     question: 'Who was India’s first President ?',
-    options: { a:'Radha Krishnan', b:'Zakir Hussain', c:'V. V. Giri', d:'Rajendra Prasad'},
+    options: { a:'Radha Krishnan', b:'Rajendra Prasad', c:'V. V. Giri', d:'Zakir Hussain'},
     answer: 'Rajendra Prasad',
     reward : 9000
   },

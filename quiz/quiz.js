@@ -12,10 +12,9 @@ const readData = () => fs.readFileSync('./result.json', 'utf8');
 const verifyAnswer = function(userAnswer){
   const questionDetails = JSON.parse(readData());
   if (questionDetails.answer === questionDetails.options[userAnswer]) {
-    console.log('Congratulations..!! You won', questionDetails.reward,'\n');
-    return;
+    return questionDetails.reward;
   }
-  console.log('Oops! wrong answer\n');
+  return 0;
 };
 
 const arrangeOption = option => option[0] + ') ' + option[1];
@@ -32,7 +31,8 @@ const startQuiz = function (questions, instruction, answer) {
   if (instruction === 'q') {
     return displayQuestion(questions[questionNum], questionNum);
   }
-  return verifyAnswer(answer);
+  console.log(verifyAnswer(answer));
+  return;
 };
 
 startQuiz(questions, ...process.argv.slice(2));
